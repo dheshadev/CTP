@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTP - Elevate Your Fitness Journey</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #4776E6;
+            --color-primary-gradient: linear-gradient(90deg, #4776E6 0%, #8E54E9 100%);
+            --color-secondary: #FF416C;
+            --color-secondary-gradient: linear-gradient(90deg, #FF416C 0%, #FF4B2B 100%);
+            --color-text: #333333;
+            --color-text-light: #666666;
+            --color-background: #FFFFFF;
+            --color-card: #F5F8FF;
+            --color-accent: #00000;
+            --border-radius: 12px;
+            --shadow-main: 0 10px 30px rgba(71, 118, 230, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--color-text);
+            background-color: var(--color-background);
+            overflow-x: hidden;
+        }
+
+        header {
+            background: var(--color-primary-gradient);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-content {
+            padding: 4rem 2rem;
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB2aWV3Qm94PSIwIDAgMTQ0MCAxMDI0IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnIG9wYWNpdHk9IjAuMiI+PGNpcmNsZSBjeD0iNzIwIiBjeT0iNTEyIiByPSI0MDAiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMiIvPjxjaXJjbGUgY3g9IjcyMCIgY3k9IjUxMiIgcj0iMzAwIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiLz48Y2lyY2xlIGN4PSI3MjAiIGN5PSI1MTIiIHI9IjIwMCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIi8+PC9nPjwvc3ZnPg==');
+            background-size: cover;
+            opacity: 0.1;
+            z-index: 1;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            font-weight: 300;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--color-secondary-gradient);
+            color: white;
+            text-decoration: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            box-shadow: 0 4px 10px rgba(255, 65, 108, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: var(--color-primary-gradient);
+            margin: 0.8rem auto 0;
+            border-radius: 2px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background-color: var(--color-card);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--shadow-main);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--color-primary);
+        }
+
+        .feature-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .formats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .format-card {
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            color: white;
+            box-shadow: var(--shadow-main);
+        }
+
+        .race-card {
+            background: linear-gradient(135deg, #FF416C 0%, #FF4B2B 100%);
+        }
+
+        .survival-card {
+            background: linear-gradient(135deg, #4776E6 0%, #8E54E9 100%);
+        }
+
+        .why-section {
+            background-color: var(--color-card);
+            border-radius: var(--border-radius);
+            padding: 3rem;
+            margin-top: 4rem;
+            box-shadow: var(--shadow-main);
+        }
+
+        .why-text {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        footer {
+            background-color: #2A2A2A;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        .support-section {
+            text-align: center;
+            background-color: white;
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-main);
+            margin-top: 4rem;
+        }
+
+        .contact-email {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            font-weight: 500;
+        }
+
+        /* Icons (Font Awesome alternative) */
+        .icon {
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+            margin-right: 0.5em;
+            stroke-width: 0;
+            stroke: currentColor;
+            fill: currentColor;
+            vertical-align: middle;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                padding: 3rem 1rem;
+            }
+            .logo {
+                font-size: 2rem;
+            }
+            .tagline {
+                font-size: 1.2rem;
+            }
+            .section-title {
+                font-size: 1.5rem;
+            }
+            .feature-card, .format-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-bg"></div>
+        <div class="header-content">
+            <h1 class="logo">CTP</h1>
+            <p class="tagline">Elevate Your Fitness Journey with Social Challenges and Tracking</p>
+            <a href="#download" class="cta-button">Download Now</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="section">
+            <h2 class="section-title">Transform Your Workouts into a Social Adventure</h2>
+            <p style="text-align: center; margin-bottom: 2rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                CTP is the ultimate fitness companion where you can create custom challenges, invite friends, and track your progress—all while having fun!
+            </p>
+
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">🏆</div>
+                    <h3 class="feature-title">Custom Fitness Challenges</h3>
+                    <p>Race to the finish line or survive the arena—choose the challenge format that motivates you most. Set goals for steps, distance, calories, or any activity you like.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">👯</div>
+                    <h3 class="feature-title">Social Motivation</h3>
+                    <p>Challenge friends directly, view live leaderboards, and celebrate milestones together. Stay accountable and inspired through community support.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3 class="feature-title">Comprehensive Tracking</h3>
+                    <p>Log steps, workouts, distance, calories, and more. Keep tabs on habits like sleep or even sugar intake. Track streaks and milestones with clear visual summaries.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Dynamic Challenge Formats</h2>
+            <div class="formats">
+                <div class="format-card race-card">
+                    <h3>Race Challenges</h3>
+                    <p>Earn points for your daily activities and watch your avatar move closer to victory on our dynamic race track visualization.</p>
+                </div>
+                <div class="format-card survival-card">
+                    <h3>Survival Arena</h3>
+                    <p>Stay active to remain in the safe zone—fall behind, and risk elimination! A thrilling format to keep you consistently active.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="why-section">
+            <h2 class="section-title">Why CTP?</h2>
+            <div class="why-text">
+                <p>Unlike apps focused solely on individual tracking, CTP brings people together. Compete or collaborate with friends, spark healthy rivalries, and share achievements—all in one engaging platform.</p>
+                <p>Whether you're building consistent habits or pushing your limits, CTP helps you stay on track through the power of community.</p>
+            </div>
+        </section>
+
+        <section id="download" class="support-section">
+            <h2 class="section-title">Ready to Level Up Your Fitness?</h2>
+            <p>Download CTP today and make every step, workout, and challenge more exciting than ever!</p>
+            <div style="margin-top: 2rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                <a href="#" style="display: inline-block;">
+                    <img src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg" alt="Download on the App Store" height="50">
+                </a>
+                <a href="#" style="display: inline-block;">
+                    <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" height="50">
+                </a>
+            </div>
+        </section>
+
+        <section class="support-section">
+            <h2 class="section-title">Support</h2>
+            <p>Need help with CTP? We're here for you!</p>
+            <p class="contact-email">support@dheshadevelopments.com</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Dhesha Developments. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+        </div>
+    </footer>
+</body>
+</html>
